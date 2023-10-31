@@ -2,58 +2,33 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-    - About Immutable Passport
-    - Purpose of this Guide
-    - Prerequisites
-
-2. [Getting Started](#getting-started)
-    - Creating a Simple Application
-    - Git Cloning a Repository (if applicable)
-
-3. [Registering Your Application](#registering-your-application)
-    - Steps to Register on Immutable Developer Hub
-    - Obtaining API Keys
-
-4. [Setting Up Passport Client](#setting-up-passport-client)
-    - Installing Dependencies
-    - Initializing the Passport Client
-    - Configuration
-
-5. [User Authentication](#user-authentication)
-    - Logging in a User with Passport
-    - Handling Authentication Errors
-
-6. [Displaying User Information](#displaying-user-information)
-    - Retrieving ID Token and Access Token
-    - Displaying User's Nickname
-
-7. [User Logout](#user-logout)
-    - Logging out a User
-
-8. [Initiating Transactions](#initiating-transactions)
-    - Sending a Placeholder Transaction
-    - Obtaining the Transaction Hash
-
-9. [Sample Application](#sample-application)
-    - Providing a Sample App (Optional)
-    - Demonstrating Passport Integration
-
-10. [Resources](#resources)
-    - Links to Immutable Passport Documentation
-    - Other Useful Resources
+- [Introduction](#introduction)
+  - [About Immutable Passport](#about-immutable-passport)
+  - [Purpose of this Guide](#purpose-of-this-guide)
+  - [Prerequisites](#prerequisites)
+- [Chapter 1: Setting Up Your Application](#-chapter-1-setting-up-your-application)
+- [Chapter 2: Registering Your Application](#-chapter-2-registering-your-application)
+  - [Step 1: Signing in to Your Immutable Developer Hub Account](#-step-1-signing-in-to-your-immutable-developer-hub-account)
+  - [Step 2: Registering Your Application](#-step-2-registering-your-application)
+- [Chapter 3: Installing and Initializing the Passport Client](#-chapter-3-installing-and-initializing-the-passport-client)
+- [Chapter 4: Logging in a User with Passport](#-chapter-4-logging-in-a-user-with-passport)
+- [Chapter 5: Displaying User Information](#-chapter-5-displaying-user-information)
+- [Chapter 6: Logging Out a User](#-chapter-6-logging-out-a-user)
+- [Chapter 7: Initiating a Transaction from Passport](#-chapter-7-initiating-a-transaction-from-passport)
+- [Epilogue: The Grand Finale](#-epilogue-the-grand-finale)
+- [References and Further Reading](#-references-and-further-reading)
 
 ## Introduction
 
-**About Immutable Passport:**
+### About Immutable Passport
 
 Immutable Passport is a revolutionary feature simplifying blockchain onboarding for the masses, driving mass adoption. It offers a user-friendly experience with features such as covering gas fees for first-time users, enabling funding with credit or debit cards, frictionless onboarding, and robust identity verification. Immutable Passport serves as a bridge between traditional and blockchain gaming, making blockchain technology accessible to a broader audience. To learn more, visit the [Immutable Passport product page](https://www.immutable.com/products/passport).
 
-## Purpose of this Guide
+### Purpose of this Guide
 
 The purpose of this guide is to provide comprehensive instructions and insights for integrating Immutable Passport into your application. By following this guide, developers and users will be able to harness the full potential of Immutable Passport's user-friendly features and its role in simplifying blockchain onboarding. Whether you're a seasoned developer or new to the world of blockchain technology, this guide aims to make the integration process straightforward and accessible. It serves as a valuable resource for driving mass adoption by breaking down entry barriers, including gas fees and the need for cryptocurrency, ultimately bridging the gap between traditional and blockchain gaming.
 
-## Prerequisites
+### Prerequisites
 
 Before you start, ensure that you meet the following requirements:
 
@@ -91,11 +66,11 @@ In this opening scene, you have two choices, just like in the movies. You can ei
   npm install  
   ```
 
-# 📋 Chapter 2: Registering Your Application
+## 📋 Chapter 2: Registering Your Application
 
 ![Movie Scene: The Registration](https://your-image-url-here)
 
-## 🚀 Step 1: Signing in to Your Immutable Developer Hub Account
+### 🚀 Step 1: Signing in to Your Immutable Developer Hub Account
 
 Your journey kicks off with the first crucial step – signing in to your Immutable Developer Hub account. If you haven't created an account yet, fret not! We'll guide you through the process.
 
@@ -105,7 +80,7 @@ Your journey kicks off with the first crucial step – signing in to your Immuta
 
 - **Guided Registration**: The Immutable Developer Hub's intuitive registration process is akin to a seasoned script, guiding you step by step through the intricate storyline of account creation. Follow the on-screen instructions, and with each click, you are weaving a tale that will grant you access to the incredible world of Immutable.
 
-## 🌟 Step 2: Registering Your Application
+### 🌟 Step 2: Registering Your Application
 
 This is the defining moment, the climax of your registration adventure. Here, you'll acquire your "Client ID," a precious key that opens doors to the blockchain kingdom.
 
@@ -255,6 +230,45 @@ logoutUser();
 
 ![Movie Scene: The Epic Battle](https://your-image-url-here)
 
+```
+// Import the necessary modules from the 'immutable' library
+import express from 'express';
+import { initiateTransaction } from '@/lib/immutable';
+
+// Create an Express application
+const app = express();
+
+// Define a route for initiating a transaction
+app.get('/transaction', async (req, res) => {
+  try {
+    // Define the transaction data and parameters here
+    const transactionData = {
+      to: 'YOUR_RECIPIENT_ADDRESS', // Replace with the recipient's address
+      value: '1000000000000000000', // Specify the value in Wei
+      data: 'Hello There !!!', // Add any necessary transaction data
+      // Additional parameters can be included here as needed
+    };
+
+    // Use the 'initiateTransaction' function to send the transaction data
+    const transactionHash = await initiateTransaction(transactionData);
+
+    // Log the transaction initiation success and send a response to the client
+    console.log(`Transaction initiated with hash: ${transactionHash}`);
+    res.send(`Transaction initiated with hash: ${transactionHash}`);
+  } catch (error) {
+    // Handle errors during transaction initiation
+    console.error(error);
+    res.status(500).send('Error initiating transaction');
+  }
+});
+
+// Start the Express server on port 3000
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+
+```
+
 Every great adventure deserves an epic climax. In this chapter, you'll learn how to initiate transactions with Immutable Passport. It's like the final showdown in a blockbuster movie! 💥
 
 
@@ -262,18 +276,15 @@ Every great adventure deserves an epic climax. In this chapter, you'll learn how
 
 ![Movie Scene: The Triumph](https://your-image-url-here)
 
-You did it! By integrating Immutable Passport, you've secured your application like a pro. Users can now navigate your app with trust and confidence. It's a bit like the grand finale of a classic movie, where the hero emerges victorious. 🏆
-
+In this cinematic journey of Immutable Passport integration, we aim to simplify blockchain onboarding and promote mass adoption. Immutable Passport offers a user-friendly experience, covering gas fees, credit/debit card funding, and robust identity verification. Whether you're a seasoned developer or new to blockchain, this guide equips you to harness its features, bridging traditional and blockchain gaming. From registration to initiating transactions, this adventure makes blockchain accessible and exciting. So, get ready to embark on this thrilling journey and let the blockchain saga continue! 🚀🎬
 
 ## 📜 References and Further Reading
 
-To explore more about Immutable Passport and the options it offers, you can refer to the [Immutable Passport documentation](https://www.immutable.com/products/passport).
+To explore more about Immutable Passport and the options it offers, you can refer to this links:
+- [Immutable Passport documentation](https://www.immutable.com/products/passport).
+- [Immutable Developers](https://www.immutable.com/developers)
+- [Immutable Community Connect](https://www.immutable.com/community/connect)
+- [Immutable Company](https://www.immutable.com/company)
 
-## 🚀 Sample Application
-
-For a working sample application showcasing Immutable Passport integration, check out the GitHub repository that accompanies this guide.
-
----
 
 With that, you've reached the end of this thrilling movie-like guide to integrating Immutable Passport into your application. 🍾 Lights, camera, action! Go forth and build incredible, secure applications with Immutable Passport by your side. Cheers to your blockbuster success! 🥂🎉
-
