@@ -42,12 +42,11 @@ In addition, it's beneficial to have the following:
 
 - **Basic Understanding of JavaScript and Node.js:** While this guide aims to be beginner-friendly, having a basic understanding of JavaScript and Node.js will be helpful.
 
-
 Ah, welcome, my fellow developers, to the grand adventure of integrating Immutable Passport into your application! If you've ever dreamt of securing your application with blockchain magic and simplifying user onboarding, you're in for a treat. Imagine this guide as a thrilling movie, with you as the hero, and Immutable Passport as your trusty sidekick. 🎥
 
 ## 🚀 Chapter 1: Setting Up Your Application
 
-![Movie Scene: The Setup](https://your-image-url-here)
+![Movie Scene: The Setup](https://imgur.com/a/I0ANwJ8)
 
 In this opening scene, you have two choices, just like in the movies. You can either start from scratch, creating a custom Next.js application that's as unique as you are, or you can clone a pre-built repository for a quicker start. It's like choosing between crafting your own superhero costume or borrowing Iron Man's suit. Your call! 😉
 
@@ -68,13 +67,11 @@ In this opening scene, you have two choices, just like in the movies. You can ei
 
 ## 📋 Chapter 2: Registering Your Application
 
-![Movie Scene: The Registration](https://your-image-url-here)
-
 ### 🚀 Step 1: Signing in to Your Immutable Developer Hub Account
 
 Your journey kicks off with the first crucial step – signing in to your Immutable Developer Hub account. If you haven't created an account yet, fret not! We'll guide you through the process.
 
-- **Visit the Immutable Developer Hub website**: Your portal to the world of blockchain possibilities awaits. Head over to the [Immutable Developer Hub website](https://www.immutable.com/developer-hub) and prepare for an exciting voyage.
+- **Visit the Immutable Developer Hub website**: Your portal to the world of blockchain possibilities awaits. Head over to the [Immutable Developer Hub website](https://www.immutable.com/developers) and prepare for an exciting voyage.
 
 - **Choosing Your Entryway**: As you reach the homepage, your options emerge like the unfolding plot of a suspenseful movie. If you already possess an Immutable Developer Hub account, the "Sign In" option is your gateway to continue your adventure. However, if you're a newcomer to this captivating universe, you have two intriguing paths to choose from: "Create Account" or "Sign Up." Select your preferred entry point to create a new account.
 
