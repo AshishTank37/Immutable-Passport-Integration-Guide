@@ -46,8 +46,7 @@ Ah, welcome, my fellow developers, to the grand adventure of integrating Immutab
 
 ## 🚀 Chapter 1: Setting Up Your Application
 
-![Movie Scene: The Setup](https://imgur.com/a/I0ANwJ8)
-
+![Meme](https://ibb.co/g75J8L2)
 In this opening scene, you have two choices, just like in the movies. You can either start from scratch, creating a custom Next.js application that's as unique as you are, or you can clone a pre-built repository for a quicker start. It's like choosing between crafting your own superhero costume or borrowing Iron Man's suit. Your call! 😉
 
 - **Creating a Basic Application**: Craft your Next.js masterpiece with:
